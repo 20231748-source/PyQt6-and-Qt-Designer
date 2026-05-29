@@ -13,6 +13,8 @@ from PyQt6.QtWidgets import QMessageBox
 
 import re
 
+# import thu vien json
+import json
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -74,7 +76,6 @@ class Ui_MainWindow(object):
         # Ket noi den ham xu ly 
         self.btnRegister.clicked.connect(self.xu_ly_dang_ky)
 
-        
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 336, 18))
@@ -96,25 +97,6 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "Re-password:"))
         self.btnRegister.setText(_translate("MainWindow", "REGISTER"))
 
-    # Ham Kiem tra tinh hop le cua email 
-    def kiem_tra_email(self, email):
-        # Cách 1: Kiểm tra địa chỉ Email hợp lệ bằng biểu thức chính quy
-        regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
-        if(re.fullmatch(regex, email)):
-            return True
-        else:
-            return False
-        
-    # Ham kiem tra tinh hop le cua password 
-    def kiem_tra_password(self, password):
-        reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!#%*?&]{6,20}$"
-        pat = re.compile(reg)
-        mat = re.search(pat, password)
-        if mat:
-            return True
-        else:
-            return False
-
     # Tao Ham xu_ly_da_ky
     def xu_ly_dang_ky(self):
         # Lay du lieu tu form 
@@ -132,8 +114,7 @@ class Ui_MainWindow(object):
             return
         elif repassword == "":
             self.thong_bao_loi("Thông báo lỗi", "Re-password không được để trống!")
-            return
-        
+            return   
 
          # Kiem tra tinh hop le cua email
         if self.kiem_tra_email(email) == False:
@@ -149,6 +130,42 @@ class Ui_MainWindow(object):
         if repassword != password:
             self.thong_bao_loi("Thông báo lỗi", "Re-password không trùng khớp với nhau!")
             return
+
+        # open file json to check account da ton tai chua 
+        with open("account.json", "r") as file:
+            data_account = json.load(file)
+
+        # duyet 
+        for ỉtem in data_account["accounts"]:
+            if ỉtem["username"] == email:
+                self.thong_bao_loi("Thông báo lỗi", "Tài khoản của bạn đã tồn tại, không được đăng ký nữa!")
+                return
+
+        # Luu account vao file json
+        data_account["accounts"].append(dict(username=email, password=password))
+        with open("account.json", "w") as file:
+            json.dump(data_account, file, indent=4)
+            self.thong_bao_loi("Thông báo", "Tài khoản của bạn đã được đăng ký thành công!")
+            return
+
+    # Ham Kiem tra tinh hop le cua email 
+    def kiem_tra_email(self, email):
+        # Cách 1: Kiểm tra địa chỉ Email hợp lệ bằng biểu thức chính quy
+        regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+        if(re.fullmatch(regex, email)):
+            return True
+        else:
+            return False
+        
+    # Ham kiem tra tinh hop le cua password 
+    def kiem_tra_password(self, password):
+        reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!#%*?&]{6,20}$"
+        pat = re.compile(reg)
+        mat = re.search(pat, password)
+        if mat:
+            return True
+        else:
+            return False 
 
     # Ham hien thi thong bao erorr
     def thong_bao_loi(self, set_title, set_text):
