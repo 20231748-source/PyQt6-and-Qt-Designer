@@ -75,7 +75,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="txtProductID"/>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_3">
@@ -85,7 +85,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="txtProductName"/>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_4">
@@ -95,7 +95,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_3"/>
+         <widget class="QLineEdit" name="txtPrice"/>
         </item>
        </layout>
       </item>
@@ -127,7 +127,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QComboBox" name="comboBox"/>
+         <widget class="QComboBox" name="cbKindOf"/>
         </item>
         <item row="1" column="0">
          <widget class="QLabel" name="label_6">
@@ -137,7 +137,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QComboBox" name="comboBox_2"/>
+         <widget class="QComboBox" name="cbOrigin"/>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_7">
@@ -147,7 +147,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLineEdit" name="lineEdit_4"/>
+         <widget class="QLineEdit" name="txtNote"/>
         </item>
        </layout>
       </item>
@@ -179,7 +179,7 @@
        <number>7</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="btnAdd">
         <property name="text">
          <string>Add</string>
         </property>
@@ -190,7 +190,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btnUpdate">
         <property name="text">
          <string>Update</string>
         </property>
@@ -201,7 +201,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="btnDelete">
         <property name="text">
          <string>Delete</string>
         </property>
@@ -212,7 +212,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="btnClear">
         <property name="text">
          <string>Clear</string>
         </property>
@@ -223,7 +223,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="btnSearch">
         <property name="text">
          <string>Search</string>
         </property>
@@ -234,7 +234,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="btnSelect">
         <property name="text">
          <string>Select</string>
         </property>
@@ -257,7 +257,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="0">
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="tblProduct">
         <column>
          <property name="text">
           <string>Product ID</string>

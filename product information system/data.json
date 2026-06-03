@@ -1,0 +1,20 @@
+{
+    "products": [
+        {
+            "product_id": 1,
+            "product_name": "Pen",
+            "price": 4000,
+            "kind_of": "office",
+            "origin": "Vietnam",
+            "note": "Good"
+        },
+        {
+            "product_id": 2,
+            "product_name": "Pencil",
+            "price": 2000,
+            "kind_of": "office",
+            "origin": "Vietnam",
+            "note": "Good"
+        }
+    ]
+}
