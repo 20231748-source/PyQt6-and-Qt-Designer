@@ -1,0 +1,18 @@
+{
+    "products": [
+        {
+            "pro_id": 1,
+            "pro_name": "Bút chì",
+            "pro_price": 2000,
+            "pro_amount": 5,
+            "pro_kind_of": "Văn phòng phẩm"
+        },
+        {
+            "pro_id": 2,
+            "pro_name": "Bút bi",
+            "pro_price": 5000,
+            "pro_amount": 10,
+            "pro_kind_of": "Văn phòng phẩm"
+        }
+    ]
+}

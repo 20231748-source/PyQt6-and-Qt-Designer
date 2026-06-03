@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
 
         # Ket noi voi ham xu ly nghiep vu
         self.btnLogin.clicked.connect(self.xu_ly_dang_nhap)
-
+    
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)

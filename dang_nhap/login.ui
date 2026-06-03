@@ -50,7 +50,7 @@
      <string>Username:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtUsername">
+   <widget class="QLineEdit" name="txtusername">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -83,7 +83,7 @@
      <string>Password:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtPassword">
+   <widget class="QLineEdit" name="txtpassword">
     <property name="geometry">
      <rect>
       <x>170</x>
