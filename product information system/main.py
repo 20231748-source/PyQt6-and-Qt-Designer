@@ -34,8 +34,6 @@ class MainWindow(QWidget, Ui_Form):
         # xu ly khi nhan nut search 
         self.btnSearch.clicked.connect(self.xu_ly_tim_kiem)
 
-
-
     # Ham doc du lieu trong file json 
     def doc_du_lieu(self):
         with open("data.json", "r") as file:
@@ -80,7 +78,7 @@ class MainWindow(QWidget, Ui_Form):
 
         # buoc 2: Phan luong tim kiem 
         if ma_sp != "" and ten_sp == "": # Nhap ProductID va khong nhap ProductName 
-            self.tiem_kiem_theo_ma(ma_sp)
+            self.tiem_kiem_theo_ma(int(ma_sp))
         elif ma_sp == "" and ten_sp != "": # Khong nhap ProductID va chi nhap ProductName
             pass
         elif ma_sp != "" and ten_sp != "": # Nhap ProductID va ProductName (ưu tiên tìm kiếm theo mã sản phẩm
