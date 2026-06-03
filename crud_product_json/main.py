@@ -32,13 +32,16 @@ def start():
                 print("Bạn nhập sai chức năng. Mời nhập lại!")
                 start()
         elif chuc_nang == 3:
-            pass            
+            them_san_pham()
+            start()            
         elif chuc_nang == 4:
-            pass
+            chinh_sua_thong_tin_theo_ma()
+            start()
         elif chuc_nang == 5:
-            pass
+            xoa_san_pham()
+            start()
         elif chuc_nang == 6:
-            pass
+            print("Cảm ơn bạn đã sử dụng chương trình của chúng tôi!.")
     else:
         print("Bạn nhập sai chức năng. Mời nhập lại!")
         start()

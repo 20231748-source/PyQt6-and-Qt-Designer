@@ -2,17 +2,17 @@
     "products": [
         {
             "pro_id": 1,
-            "pro_name": "Bút chì",
+            "pro_name": "B\u00fat ch\u00ec",
             "pro_price": 2000,
             "pro_amount": 5,
-            "pro_kind_of": "Văn phòng phẩm"
+            "pro_kind_of": "V\u0103n ph\u00f2ng ph\u1ea9m"
         },
         {
             "pro_id": 2,
-            "pro_name": "Bút bi",
+            "pro_name": "B\u00fat bi",
             "pro_price": 5000,
             "pro_amount": 10,
-            "pro_kind_of": "Văn phòng phẩm"
+            "pro_kind_of": "V\u0103n ph\u00f2ng ph\u1ea9m"
         }
     ]
 }
